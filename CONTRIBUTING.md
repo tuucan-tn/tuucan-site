@@ -68,6 +68,29 @@ reasonably sized photos (a few MB or less) so pages load quickly.
 
 ---
 
+## Editing with Claude (AI assistant)
+
+If you use **Claude Code** (a paid Claude plan), you can update the site just by
+describing what you want — Claude does the editing, shows you a preview, and publishes.
+
+1. Open Claude Code and point it at this project:
+   `https://github.com/tuucan-tn/tuucan-site`
+2. Say: **“Help me edit the TUUCAN website.”**
+3. Claude checks you're set up to publish (and tells you exactly what to do if you're
+   not), then asks what you'd like to change.
+4. Describe edits in plain English — *“make the headline warmer,” “add a note about our
+   fall gathering”* — and Claude shows you a live preview as you go.
+5. When you're happy, say **“publish it,”** and your change is live at tuucan.org in about
+   a minute.
+
+The repository carries its own instructions, so Claude knows how to walk you through all
+of this — including getting access the first time.
+
+> *On the free **claude.ai** chat:* Claude can still help you draft and preview wording,
+> but you'll paste the final text into the editor at **tuucan.org/admin** to publish.
+
+---
+
 ## Good things to know
 
 - **You can't permanently break it.** Every save is recorded with your name and the date,

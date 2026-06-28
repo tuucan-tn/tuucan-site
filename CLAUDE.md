@@ -1,6 +1,57 @@
 # Tuucan — project context
 
-Level-set file for Claude Code sessions working on tuucan.org. Last updated: 2026-06-27.
+Level-set file for Claude Code sessions working on tuucan.org. Last updated: 2026-06-28.
+
+## ✍️ Helping someone edit the website — agent playbook (START HERE)
+
+**If a user asks you to help change the TUUCAN website (tuucan.org), follow these steps.**
+Talk in plain English; never make them deal with git, JSON, or commands unless they ask.
+All page text lives in **`content/home.json`**; layout/structure is in `app/` and
+`components/`. The site auto-deploys: pushing to `main` makes changes live at tuucan.org
+in about a minute. Everything is in git history and fully reversible.
+
+1. **Authorize them (first time only).**
+   - Run `gh auth status`. If they're not signed in, have them run `gh auth login` and
+     follow the browser prompts.
+   - Confirm they can publish: `gh api repos/tuucan-tn/tuucan-site --jq .permissions`
+     should show `"push": true`. If it doesn't, tell them to ask the **site admin (Caren
+     Spencer-Smith)** to add them as a repo collaborator with **Write** access, then
+     accept the GitHub email invite.
+   - Ensure the project is set up: `npm install` (once).
+
+2. **Ask what they want to change**, in plain English. Then edit `content/home.json`
+   (keep it valid JSON). Field map:
+   - `hero` — top banner heading / subheading / button
+   - `values` — the values strip (Justice, Equity, …)
+   - `about` — the "Who We Are" heading + paragraphs
+   - `stats` — the three highlighted numbers
+   - `work` — "What We Do" heading + cards
+   - `getInvolved` — call-to-action section
+   - `footer`, `site.contactEmail` — footer + contact
+   - Visual/layout/colors → `app/page.tsx`, `components/`, `app/globals.css`.
+
+3. **Show them a live preview.** Start the dev server in the background and give them
+   **http://localhost:3000** — it hot-reloads as you edit:
+   ```bash
+   npm run dev
+   ```
+   To share a preview with *other people* before publishing, make a branch, push it, and
+   give them the **Vercel preview URL** that builds for that branch (preview protection is
+   off, so the link is openly shareable). Merge to `main` to publish.
+
+4. **Iterate** on their feedback until they're happy.
+
+5. **Publish — only when they say so.** Commit with a clear message and `git push origin
+   main`. It goes live at **tuucan.org in ~1 minute**; tell them to refresh.
+
+**Guardrails:** confirm before pushing to `main` (that = live to the public). Don't touch
+secrets/env vars/infra. Keep edits small. The current copy is a draft (see `RESOURCES.md`)
+— improving the wording is welcome.
+
+> Free **claude.ai** can't do this end-to-end (no repo access / can't run the site). It
+> can still help *draft and preview* wording, which the user then pastes into the CMS at
+> tuucan.org/admin to publish. The full edit-preview-publish loop above needs **Claude
+> Code** (a paid plan).
 
 ## What this project is
 

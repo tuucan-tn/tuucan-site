@@ -1,0 +1,50 @@
+fragment HomeParts on Home {
+  __typename
+  site {
+    __typename
+    name
+    fullName
+    contactEmail
+  }
+  hero {
+    __typename
+    eyebrow
+    heading
+    subheading
+    ctaLabel
+    ctaEmail
+  }
+  values
+  about {
+    __typename
+    heading
+    body
+  }
+  stats {
+    __typename
+    value
+    label
+  }
+  work {
+    __typename
+    heading
+    items {
+      __typename
+      title
+      body
+    }
+  }
+  getInvolved {
+    __typename
+    heading
+    body
+    ctaLabel
+    ctaEmail
+    note
+  }
+  footer {
+    __typename
+    tagline
+    contactEmail
+  }
+}

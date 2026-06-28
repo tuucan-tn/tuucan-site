@@ -1,0 +1,66 @@
+{
+  "site": {
+    "name": "TUUCAN",
+    "fullName": "Tennessee Unitarian Universalist Collective Action Network",
+    "contactEmail": "markmohundro@tvuuc.net"
+  },
+  "hero": {
+    "eyebrow": "Tennessee Unitarian Universalist Collective Action Network",
+    "heading": "Working Together for Justice Across Tennessee",
+    "subheading": "We are a statewide collective of Unitarian Universalists living and amplifying our shared values — justice, equity, transformation, pluralism, interdependence, and generosity — with love at the center.",
+    "ctaLabel": "Get Involved",
+    "ctaEmail": "markmohundro@tvuuc.net"
+  },
+  "values": [
+    "Justice",
+    "Equity",
+    "Transformation",
+    "Pluralism",
+    "Interdependence",
+    "Generosity"
+  ],
+  "about": {
+    "heading": "Who We Are",
+    "body": [
+      "TUUCAN brings together Unitarian Universalist congregations from across Tennessee to face the issues that affect our whole state. By pooling our resources and supporting one another, we turn shared values into collective action — from the statehouse to communities recovering from disaster.",
+      "Formed in 2025 after two years of grassroots organizing, TUUCAN now connects UUs in congregations spanning Tennessee. Together we advocate for justice, respond to crises, share what we learn, and build a stronger statewide community of faith in action."
+    ]
+  },
+  "stats": [
+    { "value": "14", "label": "Tennessee UU congregations" },
+    { "value": "2025", "label": "Founded statewide" },
+    { "value": "Monthly", "label": "Gatherings on Zoom" }
+  ],
+  "work": {
+    "heading": "What We Do",
+    "items": [
+      {
+        "title": "Legislative Advocacy",
+        "body": "We show up at the Tennessee statehouse and in our communities, advocating for justice, equity, and the dignity of every person."
+      },
+      {
+        "title": "Disaster Response",
+        "body": "When crises and natural disasters strike, our congregations coordinate to help neighbors across the state recover."
+      },
+      {
+        "title": "Resource Sharing",
+        "body": "We pool knowledge, tools, and people — so no congregation has to do justice work alone."
+      },
+      {
+        "title": "Community Building",
+        "body": "Through monthly gatherings and our annual Fall Flock, we strengthen the ties that connect Tennessee UUs."
+      }
+    ]
+  },
+  "getInvolved": {
+    "heading": "Get Involved",
+    "body": "Whether you belong to a Tennessee UU congregation or simply feel called to justice work, there is a place for you in TUUCAN. Reach out to learn how to connect with the network.",
+    "ctaLabel": "Email TUUCAN",
+    "ctaEmail": "markmohundro@tvuuc.net",
+    "note": "We gather on the third Saturday of each month at 10 AM via Zoom, and in person each fall for our statewide Flock."
+  },
+  "footer": {
+    "tagline": "Tennessee Unitarian Universalist Collective Action Network",
+    "contactEmail": "markmohundro@tvuuc.net"
+  }
+}

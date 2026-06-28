@@ -18,9 +18,13 @@ You need two things before your first edit. You only do this once.
    already have one. (It's free; you just need an email address.)
 
 2. **To be added as an editor.** Once you have a GitHub account, send your **GitHub
-   username** to the site administrator (the person who manages tuucan.org — currently
-   **Jesse Spencer-Smith**) and ask to be added as an editor. They'll send you an email
-   invitation from GitHub — click **Accept** in that email, and you're set.
+   username** to the site administrator — **Caren Spencer-Smith** — and ask to be added
+   as an editor. She'll send you an email invitation from GitHub; click **Accept** in
+   that email, and you're set.
+
+> *Note:* the **site administrator** (Caren) handles who can edit the website. This is
+> different from the **public contact** for TUUCAN itself, which is Mark Mohundro
+> (shown on the site's Get Involved and footer links).
 
 That's it. From now on you can edit anytime.
 

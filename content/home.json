@@ -7,7 +7,7 @@
   "hero": {
     "eyebrow": "Tennessee Unitarian Universalist Collective Action Network",
     "heading": "Working Together for Justice Across Tennessee",
-    "subheading": "We are a statewide collective of Unitarian Universalists living and amplifying our shared values — justice, equity, transformation, pluralism, interdependence, and generosity — with love at the center.",
+    "subheading": "We are a statewide collective of Unitarian Universalists living and amplifying our shared values — justice, equity, transformation, pluralism, interdependence, and generosity — with love always at the center.",
     "ctaLabel": "Get Involved",
     "ctaEmail": "markmohundro@tvuuc.net"
   },
@@ -27,9 +27,18 @@
     ]
   },
   "stats": [
-    { "value": "14", "label": "Tennessee UU congregations" },
-    { "value": "2025", "label": "Founded statewide" },
-    { "value": "Monthly", "label": "Gatherings on Zoom" }
+    {
+      "value": "14",
+      "label": "Tennessee UU congregations"
+    },
+    {
+      "value": "2025",
+      "label": "Founded statewide"
+    },
+    {
+      "value": "Monthly",
+      "label": "Gatherings on Zoom"
+    }
   ],
   "work": {
     "heading": "What We Do",

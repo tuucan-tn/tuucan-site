@@ -33,8 +33,12 @@ Key files here:
   Public because **Vercel's free Hobby plan refuses to deploy a *private* repo owned by
   a GitHub org** — public org repos deploy free; private would need Pro (~$20/mo). No
   secrets live in the repo (only `.env.example`), so public is fine.
-- **Vercel:** hosting on the free Hobby tier (to be linked via the GitHub import at
-  vercel.com/new, under Jesse's personal/Hobby scope).
+- **Vercel:** deployed & live (free Hobby). Public production URL:
+  **https://tuucan-site.vercel.app**. Vercel scope/slug is `cartulary` (Jesse's personal
+  Hobby account). Auto-deploys on push to `main`. Default "Standard" deployment
+  protection is on — it walls only the preview / scope-suffixed URLs (e.g.
+  `…-cartulary.vercel.app`); the clean production domain stays public, and a custom
+  domain (tuucan.org) will serve the production deployment publicly too.
 - **TinaCMS:** local editing via `npm run dev:cms` (→ /admin). Production editing uses
   Tina Cloud (email logins for volunteers; they do NOT need GitHub accounts). Cloud keys
   (`NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`) go in Vercel env — see `.env.example`.
@@ -111,13 +115,17 @@ Key files here:
 ## TODO / next steps (Vercel migration)
 
 Done 2026-06-27: scaffolded the Next.js + Tina site, added real content/logo/palette,
-built the homepage, created the private repo tuucan-tn/tuucan-site, pushed.
+built the homepage, created the repo tuucan-tn/tuucan-site (made public), pushed, and
+**deployed to Vercel — live at https://tuucan-site.vercel.app**.
 
 Next:
-1. Link the repo to **Vercel** (needs Jesse's `vercel login`); deploy → preview URL.
-2. Create a free **Tina Cloud** project (Jesse's account); add client ID + token to
-   Vercel env; switch the Vercel build to `tina:build && build`; invite volunteer editors.
-3. Repoint **tuucan.org** DNS from Squarespace to Vercel; verify end-to-end.
-4. Let the Squarespace trial lapse (do NOT pay). Keep the domain registration.
-5. Replace draft copy with content confirmed by Jesse / the steering committee;
+1. Create a free **Tina Cloud** project (Jesse's account) connected to the repo; add
+   client ID + token to Vercel env; switch the Vercel build to `tina:build && build`;
+   invite volunteer editors (email logins — no GitHub needed).
+2. Repoint **tuucan.org** DNS from Squarespace to Vercel (add domain in Vercel →
+   A `@`→76.76.21.21, CNAME `www`→cname.vercel-dns.com at Squarespace); verify end-to-end.
+   Consider waiting until copy is signed off, since this makes the site public at the
+   real domain.
+3. Let the Squarespace trial lapse (do NOT pay). Keep the domain registration.
+4. Replace draft copy with content confirmed by Jesse / the steering committee;
    add real photos to the hero / sections.

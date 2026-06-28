@@ -1,6 +1,6 @@
 # tuucan-site
 
-Website for **TUUCAN — Tennessee Unitarian Universalist Collective Action Network**
+Website for **TUUCAN — Tennessee Unitarian Universalist Community Action Network**
 ([tuucan.org](https://tuucan.org)). A statewide network of UU congregations working
 together for justice across Tennessee.
 

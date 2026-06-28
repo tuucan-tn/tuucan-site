@@ -22,15 +22,68 @@ npm run dev        # Next dev server → http://localhost:3000
 npm run build      # production build
 ```
 
-## Content editing
+## How to edit the website
 
-- **Source of truth:** `content/home.json` (committed to git, full history).
-- **Visual editor:** **Sveltia CMS** at `/admin`. Editors **log in with GitHub** and
-  must be **collaborators** on this repo (free, unlimited editors). Saving commits
-  directly to `main`, which auto-redeploys.
-- **Login:** GitHub OAuth handled by a self-hosted relay (`app/api/auth`,
-  `app/api/callback`) — needs a GitHub OAuth App (creds in Vercel env, see below).
-- **Schema:** `public/admin/config.yml` defines the editable fields.
+There are two ways to change the site. Most edits use **Option A** (in the browser, no
+code). Either way, every change is saved to git history, auto-deploys in ~1 minute, and
+can be undone.
+
+### Option A — Edit in the browser (no code needed)
+
+This is how staff and volunteers change the words and pictures on the site.
+
+**One-time setup for each new editor** (an admin/owner does this once per person):
+
+1. The editor creates a free **GitHub account** at <https://github.com/signup>.
+2. An admin adds them to the repo: GitHub → **`tuucan-tn/tuucan-site`** →
+   **Settings → Collaborators → Add people** → enter their GitHub username →
+   give **Write** access.
+3. The editor accepts the email invitation from GitHub.
+
+**Making an edit:**
+
+1. Go to **<https://tuucan.org/admin>**.
+2. Click **Sign in with GitHub** and approve (only asked the first time).
+3. Click **Site Content → Homepage**.
+4. Change any field — e.g. the hero heading and subheading, the **Who We Are**
+   paragraphs, the stats, the **What We Do** cards, **Get Involved**, the footer, or the
+   contact email.
+5. Click **Save** (top of the editor). This commits your change to the site.
+6. Wait about a minute for the site to rebuild, then refresh **tuucan.org** — your edit
+   is live.
+
+**Images:** use the image/upload button inside a field in the editor; uploaded files are
+stored in the repo under `public/uploads/`.
+
+> No files or command line required. If something looks wrong, an admin can revert any
+> change from the repository's commit history.
+
+### Option B — Edit in code (for developers)
+
+All page copy lives in one file: **`content/home.json`** (the same data the browser
+editor changes). Page layout/structure lives in `app/` and `components/`.
+
+```bash
+npm install
+npm run dev          # preview at http://localhost:3000
+# edit content/home.json (and/or app/, components/)
+git add -A && git commit -m "Update homepage copy"
+git push origin main # Vercel auto-deploys in ~1 min
+```
+
+- `content/home.json` — all the words and links.
+- `app/page.tsx`, `components/` — page sections and layout.
+- `public/admin/config.yml` — which fields show up in the browser editor; keep its field
+  names in sync with `content/home.json`.
+
+### How the browser login works (for maintainers)
+
+The editor is **Sveltia CMS** (`public/admin/`). Sign-in uses GitHub OAuth via a
+self-hosted relay in this app — `app/api/auth` (starts the flow) and
+`app/api/callback` (exchanges the code for a token). It needs a GitHub **OAuth App**
+whose `GITHUB_OAUTH_CLIENT_ID` / `GITHUB_OAUTH_CLIENT_SECRET` are set in the Vercel
+project (see `.env.example`), with callback URL
+`https://tuucan-site.vercel.app/api/callback`.
 
 ## Brand assets
 

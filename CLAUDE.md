@@ -53,11 +53,16 @@ Key files here:
   at Squarespace Domains (renews Jul 1 2027); only DNS moved. In the Squarespace DNS
   panel the "Squarespace Defaults" preset was replaced with one custom record:
   **A `@` → 216.198.79.1** (Vercel's current apex IP; old 76.76.21.21 also works).
-  Bare `tuucan.org` is the canonical domain. **`www.tuucan.org` → 307 redirect to apex**
-  (added 2026-06-27): in Vercel, www is a "Redirect to Another Domain" → tuucan.org;
-  at Squarespace a custom **CNAME `www` → 08fc34b7ada9dae9.vercel-dns-017.com**. Both
-  apex and www serve with SSL. DNS edits at Squarespace each require a fresh SMS code to
-  …2562. The Email Security (SPF/DKIM/DMARC) + Domain Connect presets were left intact.
+  **Both `tuucan.org` and `www.tuucan.org` SERVE the site** (both "Connect to Production"
+  in Vercel); `tuucan.org` is declared canonical via `alternates.canonical` in
+  `app/layout.tsx`. At Squarespace: `A @ → 216.198.79.1` + `CNAME www →
+  08fc34b7ada9dae9.vercel-dns-017.com`. DNS edits at Squarespace each require a fresh SMS
+  code to …2562. Email Security (SPF/DKIM/DMARC) + Domain Connect presets left intact.
+  **Gotcha (why www SERVES rather than redirects):** during cutover, resolvers with the
+  OLD apex cached hit Squarespace's `apex → 301 → www`; if www then redirected back to
+  apex it caused `ERR_TOO_MANY_REDIRECTS`. Making www serve directly breaks that loop in
+  every cache state. (Once the old apex cache is globally gone, a www→apex redirect would
+  also be safe, but serving both is simplest.)
 
 ## Accounts & access
 

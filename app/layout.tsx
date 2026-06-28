@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   description:
     "A statewide network of Unitarian Universalist congregations working together for justice across Tennessee.",
   metadataBase: new URL("https://tuucan.org"),
+  // Both tuucan.org and www.tuucan.org serve the site; declare the bare domain canonical.
+  alternates: { canonical: "/" },
   openGraph: {
     title: "TUUCAN — Working Together for Justice Across Tennessee",
     description:

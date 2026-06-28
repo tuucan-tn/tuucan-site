@@ -53,11 +53,11 @@ Key files here:
   at Squarespace Domains (renews Jul 1 2027); only DNS moved. In the Squarespace DNS
   panel the "Squarespace Defaults" preset was replaced with one custom record:
   **A `@` → 216.198.79.1** (Vercel's current apex IP; old 76.76.21.21 also works).
-  Bare `tuucan.org` is the canonical domain. **`www.tuucan.org` is NOT yet configured**
-  (no record) — to add it: add www in Vercel + CNAME `www`→cname.vercel-dns.com at
-  Squarespace (another DNS edit, SMS 2FA to …2562). DNS edits at Squarespace require
-  that SMS code. The Email Security (SPF/DKIM/DMARC) + Domain Connect presets were left
-  intact.
+  Bare `tuucan.org` is the canonical domain. **`www.tuucan.org` → 307 redirect to apex**
+  (added 2026-06-27): in Vercel, www is a "Redirect to Another Domain" → tuucan.org;
+  at Squarespace a custom **CNAME `www` → 08fc34b7ada9dae9.vercel-dns-017.com**. Both
+  apex and www serve with SSL. DNS edits at Squarespace each require a fresh SMS code to
+  …2562. The Email Security (SPF/DKIM/DMARC) + Domain Connect presets were left intact.
 
 ## Accounts & access
 

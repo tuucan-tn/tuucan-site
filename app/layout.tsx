@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import home from "@/content/home.json";
@@ -49,6 +50,7 @@ export default function RootLayout({
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
+        <AnnouncementBar announcement={home.announcement} />
         <SiteHeader site={home.site} />
         <main className="flex-1">{children}</main>
         <SiteFooter footer={home.footer} site={home.site} />

@@ -1,4 +1,10 @@
 {
+  "announcement": {
+    "show": true,
+    "text": "TUUCAN is co-sponsoring the Tennessee Solidarity Summit — Sept 18–20, Memphis",
+    "linkLabel": "See details",
+    "linkHref": "#event"
+  },
   "site": {
     "name": "TUUCAN",
     "fullName": "Tennessee Unitarian Universalist Collective Action Network",

@@ -33,6 +33,14 @@ collections:
               - { label: Short name, name: name, widget: string }
               - { label: Full network name, name: fullName, widget: string }
               - { label: Contact email, name: contactEmail, widget: string }
+          - label: Top announcement bar
+            name: announcement
+            widget: object
+            fields:
+              - { label: Show the bar?, name: show, widget: boolean }
+              - { label: Message, name: text, widget: string }
+              - { label: Link label, name: linkLabel, widget: string }
+              - { label: "Link target (#event, or a full URL)", name: linkHref, widget: string }
           - label: Hero (top banner)
             name: hero
             widget: object

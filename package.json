@@ -6,7 +6,7 @@
     "dev": "next dev",
     "dev:cms": "tinacms dev -c \"next dev\"",
     "build": "next build",
-    "tina:build": "tinacms build",
+    "tina:build": "tinacms build --content=local",
     "start": "next start",
     "lint": "eslint"
   },

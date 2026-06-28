@@ -115,17 +115,37 @@ Key files here:
 ## TODO / next steps (Vercel migration)
 
 Done 2026-06-27: scaffolded the Next.js + Tina site, added real content/logo/palette,
-built the homepage, created the repo tuucan-tn/tuucan-site (made public), pushed, and
-**deployed to Vercel — live at https://tuucan-site.vercel.app**.
+built the homepage, created the repo tuucan-tn/tuucan-site (made public), pushed,
+**deployed to Vercel — live at https://tuucan-site.vercel.app**, and **fully wired up
+TinaCloud** — the `/admin` editor works (Jesse logged in via GitHub, content editable).
+
+### TinaCloud setup — how it's wired + the gotchas (so we never re-debug this)
+- **Client ID:** `ae61ecff-f395-4adf-8f7d-e21aad308647` (project "tuucan-site",
+  org "Jesse Spencer-Smith's Organization" on app.tina.io).
+- **Vercel env vars** (Production): `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`
+  (read-only token — secret), `NEXT_PUBLIC_TINA_BRANCH=main`.
+- **Build:** `vercel.json` sets buildCommand `npm run tina:build && npm run build`
+  (`tina:build` = `tinacms build`, which compiles the `/admin` SPA to `public/admin`).
+- **`tina/tina-lock.json` MUST be committed** — TinaCloud reads it from the repo to
+  detect the schema; without it, branches never index and every build fails with
+  "Branch 'main' is not on TinaCloud." Regenerate with `npx tinacms dev` (or
+  `npm run dev:cms`) after any schema change in `tina/config.ts`, then commit it.
+  `tina/__generated__` is also committed.
+- **First-time indexing needed a MANUAL reindex:** even with tina-lock.json pushed,
+  `main` showed in app.tina.io → Configuration → Branches but with an empty Event Log
+  (never actually indexed). Fix: the branch's ⋮ menu → **Reindex** → wait for the green
+  check, THEN redeploy. (Pushing alone did NOT trigger a real index.)
+- **Site URLs allowlist** (Configuration → Site URLs) must include every origin the
+  editor loads from, or login is rejected. Currently set: localhost:3000,
+  https://tuucan-site.vercel.app, https://tuucan.org, https://www.tuucan.org.
 
 Next:
-1. Create a free **Tina Cloud** project (Jesse's account) connected to the repo; add
-   client ID + token to Vercel env; switch the Vercel build to `tina:build && build`;
-   invite volunteer editors (email logins — no GitHub needed).
+1. **Invite volunteer editors** in TinaCloud → Collaborators (email logins, no GitHub).
+   Free plan caps at ~2 editors; upgrade if the committee needs more.
 2. Repoint **tuucan.org** DNS from Squarespace to Vercel (add domain in Vercel →
    A `@`→76.76.21.21, CNAME `www`→cname.vercel-dns.com at Squarespace); verify end-to-end.
-   Consider waiting until copy is signed off, since this makes the site public at the
-   real domain.
+   tuucan.org is already in the Tina Site URLs allowlist. Consider waiting until copy is
+   signed off, since this makes the site public at the real domain.
 3. Let the Squarespace trial lapse (do NOT pay). Keep the domain registration.
-4. Replace draft copy with content confirmed by Jesse / the steering committee;
-   add real photos to the hero / sections.
+4. Replace draft copy with content confirmed by Jesse / the steering committee (edit via
+   /admin or content/home.json); add real photos to the hero / sections.

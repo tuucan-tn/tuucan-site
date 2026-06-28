@@ -42,6 +42,18 @@ collections:
               - { label: Subheading, name: subheading, widget: text }
               - { label: Button label, name: ctaLabel, widget: string }
               - { label: Button email, name: ctaEmail, widget: string }
+          - label: Upcoming Event
+            name: event
+            widget: object
+            fields:
+              - { label: Show this event on the site?, name: show, widget: boolean }
+              - { label: Eyebrow (small label above title), name: eyebrow, widget: string }
+              - { label: Event title, name: title, widget: string }
+              - { label: Date (e.g. September 18–20, 2026), name: date, widget: string }
+              - { label: Location, name: location, widget: string }
+              - { label: Description, name: body, widget: text }
+              - { label: Button label, name: ctaLabel, widget: string }
+              - { label: Registration link (full URL), name: ctaUrl, widget: string }
           - label: Shared values
             name: values
             widget: list

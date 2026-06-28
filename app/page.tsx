@@ -2,7 +2,7 @@ import Image from "next/image";
 import home from "@/content/home.json";
 
 export default function Home() {
-  const { hero, values, about, stats, work, getInvolved } = home;
+  const { hero, values, about, stats, work, getInvolved, event } = home;
 
   return (
     <div id="top">
@@ -61,6 +61,38 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ---------------- Upcoming Event ---------------- */}
+      {event?.show && (
+        <section id="event" className="scroll-mt-20 bg-sand-deep/30">
+          <div className="mx-auto max-w-4xl px-5 py-16 md:py-20">
+            <div className="rounded-3xl border border-orange/40 bg-cream p-8 text-center shadow-sm md:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-flame">
+                {event.eyebrow}
+              </p>
+              <h2 className="mt-3 text-3xl font-bold text-slate sm:text-4xl">
+                {event.title}
+              </h2>
+              <p className="mt-3 text-base font-semibold text-orange-dark">
+                {event.date} · {event.location}
+              </p>
+              <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-ink/80">
+                {event.body}
+              </p>
+              <div className="mt-7">
+                <a
+                  href={event.ctaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-full bg-orange px-8 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-orange-dark"
+                >
+                  {event.ctaLabel}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ---------------- Who We Are ---------------- */}
       <section id="who-we-are" className="scroll-mt-20 bg-cream">

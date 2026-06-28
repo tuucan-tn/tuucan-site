@@ -64,6 +64,24 @@ Key files here:
   every cache state. (Once the old apex cache is globally gone, a www→apex redirect would
   also be safe, but serving both is simplest.)
 
+## Roles & continuity (2026-06-28)
+
+- **Site-editing admin (manages editors, content, reverts):** **Caren Spencer-Smith** —
+  to be added as an **Owner of the `tuucan-tn` GitHub org** (gives full repo/site admin,
+  **no Vercel access needed**). Pending: she needs a free GitHub account, then invite her
+  later today. Named as the editor-access contact in `CONTRIBUTING.md`.
+- **Public contact (on the live site):** **Mark Mohundro** (markmohundro@tvuuc.net) —
+  already wired into Get Involved + footer. Distinct from the editing admin.
+- **The site IS the org's git repo**, not anyone's Vercel account. Editors/admins work
+  through GitHub only; Vercel is a replaceable "deployer." Hobby is single-user, but
+  handoff is easy: transfer the Vercel project to the successor's account, OR re-import
+  the public repo into their Vercel (~10 min) + repoint DNS. GitHub org ownership is
+  transferable (add new Owner, remove old).
+- **Continuity follow-up:** the GitHub **OAuth App** (CMS login, Client ID
+  `Ov23li9uvKNrWK2Y4SVj`) should ideally be **org-owned**, not Jesse's personal account,
+  so logins survive a handoff. If personal, recreate under `tuucan-tn` and update the
+  two Vercel env vars.
+
 ## Accounts & access
 
 - **Squarespace account:** caren.spencersmith@gmail.com (Caren's account; Jesse drives

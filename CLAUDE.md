@@ -36,8 +36,10 @@ in about a minute. Everything is in git history and fully reversible.
    npm run dev
    ```
    To share a preview with *other people* before publishing, make a branch, push it, and
-   give them the **Vercel preview URL** that builds for that branch (preview protection is
-   off, so the link is openly shareable). Merge to `main` to publish.
+   give them the **Vercel preview URL** that builds for that branch. (Note: preview
+   deployments sit behind a Vercel login by default — to make a preview link openly
+   shareable, the Vercel project owner turns off Settings → Deployment Protection →
+   Vercel Authentication.) Merge to `main` to publish.
 
 4. **Iterate** on their feedback until they're happy.
 

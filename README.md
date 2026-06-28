@@ -24,9 +24,9 @@ npm run build      # production build
 
 ## How to edit the website
 
-There are two ways to change the site. Most edits use **Option A** (in the browser, no
-code). Either way, every change is saved to git history, auto-deploys in ~1 minute, and
-can be undone.
+There are three ways to change the site — **(A)** edit in the browser, **(B)** just
+describe what you want to Claude in plain English, or **(C)** edit the code directly.
+Every change is saved to git history, auto-deploys in ~1 minute, and can be undone.
 
 > **Non-technical editor?** See **[`CONTRIBUTING.md`](./CONTRIBUTING.md)** for a friendly,
 > jargon-free walkthrough written just for you.
@@ -61,7 +61,25 @@ stored in the repo under `public/uploads/`.
 > No files or command line required. If something looks wrong, an admin can revert any
 > change from the repository's commit history.
 
-### Option B — Edit in code (for developers)
+### Option B — Edit with Claude, in plain English
+
+If you use **Claude Code** (a paid Claude plan), you can change the site just by
+describing what you want — no CMS or code required.
+
+1. Open Claude Code and point it at this repo: `https://github.com/tuucan-tn/tuucan-site`
+2. Say: **“Help me edit the TUUCAN website.”**
+3. Claude reads this repo's built-in playbook (top of `CLAUDE.md`), checks that you're
+   authorized to publish (and walks you through it if not), then asks what you'd like to
+   change.
+4. Describe edits in plain English — *“make the headline warmer,” “add an event
+   banner”* — and Claude shows you a **live preview** as you iterate.
+5. Say **“publish it”** and your change is live at tuucan.org in about a minute.
+
+> On the free **claude.ai** chat, Claude can still help you *draft and preview* wording,
+> which you then paste into the CMS at **tuucan.org/admin** to publish — see
+> [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
+### Option C — Edit in code (for developers)
 
 All page copy lives in one file: **`content/home.json`** (the same data the browser
 editor changes). Page layout/structure lives in `app/` and `components/`.

@@ -17,17 +17,19 @@ old Squarespace site is being abandoned (trial left to lapse, NOT paid). See
 
 Key files here:
 - `app/`, `components/`, `content/home.json` — the Next.js site + its editable copy.
-- `tina/config.ts` — TinaCMS schema (the CMS-editable fields).
+- `public/admin/config.yml` — Sveltia CMS schema (the CMS-editable fields).
+- `app/api/auth` + `app/api/callback` — the GitHub OAuth relay for the CMS login.
 - `RESOURCES.md` — researched background on TUUCAN, CUUSAN, sister networks, contacts.
 - `TUUCAN.PNG` + `brand/` — official logo and generated avatars.
 
 ## Architecture & accounts (current — 2026-06-27)
 
-- **Stack:** Next.js 16 (App Router, static) + React 19 + Tailwind v4 + TinaCMS.
+- **Stack:** Next.js 16 (App Router, static) + React 19 + Tailwind v4 + Sveltia CMS.
   Palette in `app/globals.css` sampled from the logo (cream #FFFDF9, orange #F28D2F,
   flame #CF4A25, slate #364345). Fonts: Fraunces (display) + Inter (body).
 - **All page copy is in `content/home.json`**, rendered by `app/page.tsx`. Edit there
-  (or via Tina). Content is draft (from RESOURCES.md) — verify before treating as final.
+  (or via the Sveltia editor at `/admin`). Content is draft (from RESOURCES.md) — verify
+  before treating as final.
 - **GitHub:** **public** repo **tuucan-tn/tuucan-site** (org `tuucan-tn`, created by
   Jesse; he is admin). `gh` is authed as `jessespencersmith`. Use HTTPS remotes.
   Public because **Vercel's free Hobby plan refuses to deploy a *private* repo owned by
@@ -39,9 +41,14 @@ Key files here:
   protection is on — it walls only the preview / scope-suffixed URLs (e.g.
   `…-cartulary.vercel.app`); the clean production domain stays public, and a custom
   domain (tuucan.org) will serve the production deployment publicly too.
-- **TinaCMS:** local editing via `npm run dev:cms` (→ /admin). Production editing uses
-  Tina Cloud (email logins for volunteers; they do NOT need GitHub accounts). Cloud keys
-  (`NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`) go in Vercel env — see `.env.example`.
+- **CMS = Sveltia CMS** (static editor at `/admin`, served from `public/admin/`).
+  Free + unlimited editors. **Editors log in with GitHub and must be repo collaborators**
+  (no per-seat cost). We switched here on 2026-06-27 after TinaCloud's free plan capped
+  at 2 editors. Login uses a self-hosted **GitHub OAuth relay** in this app
+  (`app/api/auth` + `app/api/callback`) — no Cloudflare/Netlify needed. Requires a GitHub
+  **OAuth App** whose creds (`GITHUB_OAUTH_CLIENT_ID`, `GITHUB_OAUTH_CLIENT_SECRET`) live
+  in Vercel env; callback URL = `https://tuucan-site.vercel.app/api/callback`. See
+  `.env.example`. Content commits straight to `main` → auto-redeploys.
 - **Domain:** tuucan.org stays registered at Squarespace Domains; only DNS will be
   repointed to Vercel (A `@`→76.76.21.21, CNAME `www`→cname.vercel-dns.com).
 
@@ -114,38 +121,36 @@ Key files here:
 
 ## TODO / next steps (Vercel migration)
 
-Done 2026-06-27: scaffolded the Next.js + Tina site, added real content/logo/palette,
-built the homepage, created the repo tuucan-tn/tuucan-site (made public), pushed,
-**deployed to Vercel — live at https://tuucan-site.vercel.app**, and **fully wired up
-TinaCloud** — the `/admin` editor works (Jesse logged in via GitHub, content editable).
+Done 2026-06-27: scaffolded the Next.js site, real content/logo/palette, built the
+homepage, repo tuucan-tn/tuucan-site (public), **deployed to Vercel — live at
+https://tuucan-site.vercel.app**.
 
-### TinaCloud setup — how it's wired + the gotchas (so we never re-debug this)
-- **Client ID:** `ae61ecff-f395-4adf-8f7d-e21aad308647` (project "tuucan-site",
-  org "Jesse Spencer-Smith's Organization" on app.tina.io).
-- **Vercel env vars** (Production): `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`
-  (read-only token — secret), `NEXT_PUBLIC_TINA_BRANCH=main`.
-- **Build:** `vercel.json` sets buildCommand `npm run tina:build && npm run build`
-  (`tina:build` = `tinacms build`, which compiles the `/admin` SPA to `public/admin`).
-- **`tina/tina-lock.json` MUST be committed** — TinaCloud reads it from the repo to
-  detect the schema; without it, branches never index and every build fails with
-  "Branch 'main' is not on TinaCloud." Regenerate with `npx tinacms dev` (or
-  `npm run dev:cms`) after any schema change in `tina/config.ts`, then commit it.
-  `tina/__generated__` is also committed.
-- **First-time indexing needed a MANUAL reindex:** even with tina-lock.json pushed,
-  `main` showed in app.tina.io → Configuration → Branches but with an empty Event Log
-  (never actually indexed). Fix: the branch's ⋮ menu → **Reindex** → wait for the green
-  check, THEN redeploy. (Pushing alone did NOT trigger a real index.)
-- **Site URLs allowlist** (Configuration → Site URLs) must include every origin the
-  editor loads from, or login is rejected. Currently set: localhost:3000,
-  https://tuucan-site.vercel.app, https://tuucan.org, https://www.tuucan.org.
+**CMS history:** first wired TinaCloud, but its free plan caps at 2 editors and even
+adding the 2nd was blocked → **switched to Sveltia CMS** (free, unlimited editors,
+GitHub login). Tina is fully removed.
 
-Next:
-1. **Invite volunteer editors** in TinaCloud → Collaborators (email logins, no GitHub).
-   Free plan caps at ~2 editors; upgrade if the committee needs more.
-2. Repoint **tuucan.org** DNS from Squarespace to Vercel (add domain in Vercel →
+### Sveltia CMS setup — how it's wired
+- **Editor:** `public/admin/index.html` (loads Sveltia from unpkg CDN) + `config.yml`
+  (Decap-compatible schema mirroring `content/home.json`). Visit `/admin`.
+- **Login:** GitHub OAuth via a self-hosted relay — `app/api/auth/route.ts` (starts the
+  flow, sets a CSRF cookie) and `app/api/callback/route.ts` (exchanges code→token,
+  postMessages it back per the sveltia-cms-auth protocol). No Cloudflare/Netlify.
+- **Needs a GitHub OAuth App** (github.com/settings/developers): callback URL
+  `https://tuucan-site.vercel.app/api/callback`; its Client ID + Secret go in Vercel env
+  as `GITHUB_OAUTH_CLIENT_ID` / `GITHUB_OAUTH_CLIENT_SECRET`.
+- **Editors must be GitHub repo collaborators** (write access) on tuucan-tn/tuucan-site,
+  each with a free GitHub account. OAuth scope is `public_repo` (repo is public).
+- Edits commit straight to `main` → Vercel auto-redeploys.
+
+Next (hand-off steps for Jesse):
+1. **Create the GitHub OAuth App** + set the two env vars in Vercel (in progress).
+2. **Add editors as repo collaborators** (Settings → Collaborators on the GitHub repo).
+   Caren = caren.spencersmith@gmail.com (needs a GitHub account).
+3. Repoint **tuucan.org** DNS from Squarespace to Vercel (add domain in Vercel →
    A `@`→76.76.21.21, CNAME `www`→cname.vercel-dns.com at Squarespace); verify end-to-end.
-   tuucan.org is already in the Tina Site URLs allowlist. Consider waiting until copy is
-   signed off, since this makes the site public at the real domain.
-3. Let the Squarespace trial lapse (do NOT pay). Keep the domain registration.
-4. Replace draft copy with content confirmed by Jesse / the steering committee (edit via
-   /admin or content/home.json); add real photos to the hero / sections.
+   Consider waiting until copy is signed off, since this makes the site public.
+4. Let the Squarespace trial lapse (do NOT pay). Keep the domain registration.
+5. Replace draft copy with content confirmed by Jesse / the steering committee (edit via
+   /admin or content/home.json); add real photos.
+6. Optional cleanup: delete the now-unused TinaCloud project + the
+   NEXT_PUBLIC_TINA_*/TINA_TOKEN Vercel env vars.

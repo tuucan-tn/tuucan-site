@@ -4,18 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:cms": "tinacms dev -c \"next dev\"",
     "build": "next build",
-    "tina:build": "tinacms build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "@tinacms/cli": "^2.5.1",
     "next": "16.2.9",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "tinacms": "^3.9.3"
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

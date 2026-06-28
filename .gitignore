@@ -34,11 +34,6 @@ yarn-error.log*
 .env*
 !.env.example
 
-# tinacms built admin SPA output (large, rebuilt on each deploy — not committed)
-/public/admin
-# NOTE: tina/__generated__ IS committed on purpose — TinaCloud reads the schema
-# (_graphql.json/_lookup.json/_schema.json) from the repo to index content.
-
 # vercel
 .vercel
 

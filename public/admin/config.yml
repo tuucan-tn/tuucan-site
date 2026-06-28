@@ -1,0 +1,89 @@
+# Sveltia CMS configuration (Decap/Netlify CMS compatible)
+backend:
+  name: github
+  repo: tuucan-tn/tuucan-site
+  branch: main
+  # OAuth relay lives in this same app (Vercel API routes). The CMS opens
+  # <base_url>/<auth_endpoint> in a popup to start the GitHub login.
+  base_url: https://tuucan-site.vercel.app
+  auth_endpoint: api/auth
+
+site_url: https://tuucan.org
+display_url: https://tuucan.org
+logo_url: /tuucan-bird.png
+
+# Image uploads (Get Involved photos etc.) land here in the repo.
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: pages
+    label: Site Content
+    description: Edit the words and links on the TUUCAN homepage, then Publish.
+    files:
+      - name: home
+        label: Homepage
+        file: content/home.json
+        format: json
+        fields:
+          - label: Site
+            name: site
+            widget: object
+            fields:
+              - { label: Short name, name: name, widget: string }
+              - { label: Full network name, name: fullName, widget: string }
+              - { label: Contact email, name: contactEmail, widget: string }
+          - label: Hero (top banner)
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow (small label above heading), name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: text }
+              - { label: Subheading, name: subheading, widget: text }
+              - { label: Button label, name: ctaLabel, widget: string }
+              - { label: Button email, name: ctaEmail, widget: string }
+          - label: Shared values
+            name: values
+            widget: list
+            field: { label: Value, name: value, widget: string }
+          - label: Who We Are
+            name: about
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Paragraphs
+                name: body
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Number / value, name: value, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: What We Do
+            name: work
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Body, name: body, widget: text }
+          - label: Get Involved
+            name: getInvolved
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Body, name: body, widget: text }
+              - { label: Button label, name: ctaLabel, widget: string }
+              - { label: Button email, name: ctaEmail, widget: string }
+              - { label: Note, name: note, widget: text }
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Tagline, name: tagline, widget: string }
+              - { label: Contact email, name: contactEmail, widget: string }

@@ -28,6 +28,9 @@ There are two ways to change the site. Most edits use **Option A** (in the brows
 code). Either way, every change is saved to git history, auto-deploys in ~1 minute, and
 can be undone.
 
+> **Non-technical editor?** See **[`CONTRIBUTING.md`](./CONTRIBUTING.md)** for a friendly,
+> jargon-free walkthrough written just for you.
+
 ### Option A — Edit in the browser (no code needed)
 
 This is how staff and volunteers change the words and pictures on the site.

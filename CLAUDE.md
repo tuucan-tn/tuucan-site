@@ -28,9 +28,13 @@ Key files here:
   flame #CF4A25, slate #364345). Fonts: Fraunces (display) + Inter (body).
 - **All page copy is in `content/home.json`**, rendered by `app/page.tsx`. Edit there
   (or via Tina). Content is draft (from RESOURCES.md) — verify before treating as final.
-- **GitHub:** private repo **tuucan-tn/tuucan-site** (org `tuucan-tn`, created by Jesse;
-  he is admin). `gh` is authed as `jessespencersmith`. Use HTTPS remotes.
-- **Vercel:** hosting on the free Hobby tier (to be linked — needs Jesse's `vercel login`).
+- **GitHub:** **public** repo **tuucan-tn/tuucan-site** (org `tuucan-tn`, created by
+  Jesse; he is admin). `gh` is authed as `jessespencersmith`. Use HTTPS remotes.
+  Public because **Vercel's free Hobby plan refuses to deploy a *private* repo owned by
+  a GitHub org** — public org repos deploy free; private would need Pro (~$20/mo). No
+  secrets live in the repo (only `.env.example`), so public is fine.
+- **Vercel:** hosting on the free Hobby tier (to be linked via the GitHub import at
+  vercel.com/new, under Jesse's personal/Hobby scope).
 - **TinaCMS:** local editing via `npm run dev:cms` (→ /admin). Production editing uses
   Tina Cloud (email logins for volunteers; they do NOT need GitHub accounts). Cloud keys
   (`NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`) go in Vercel env — see `.env.example`.

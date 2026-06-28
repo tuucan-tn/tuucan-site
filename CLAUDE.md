@@ -49,8 +49,15 @@ Key files here:
   **OAuth App** whose creds (`GITHUB_OAUTH_CLIENT_ID`, `GITHUB_OAUTH_CLIENT_SECRET`) live
   in Vercel env; callback URL = `https://tuucan-site.vercel.app/api/callback`. See
   `.env.example`. Content commits straight to `main` → auto-redeploys.
-- **Domain:** tuucan.org stays registered at Squarespace Domains; only DNS will be
-  repointed to Vercel (A `@`→76.76.21.21, CNAME `www`→cname.vercel-dns.com).
+- **Domain:** **tuucan.org is LIVE on Vercel** (cutover 2026-06-27). Registration stays
+  at Squarespace Domains (renews Jul 1 2027); only DNS moved. In the Squarespace DNS
+  panel the "Squarespace Defaults" preset was replaced with one custom record:
+  **A `@` → 216.198.79.1** (Vercel's current apex IP; old 76.76.21.21 also works).
+  Bare `tuucan.org` is the canonical domain. **`www.tuucan.org` is NOT yet configured**
+  (no record) — to add it: add www in Vercel + CNAME `www`→cname.vercel-dns.com at
+  Squarespace (another DNS edit, SMS 2FA to …2562). DNS edits at Squarespace require
+  that SMS code. The Email Security (SPF/DKIM/DMARC) + Domain Connect presets were left
+  intact.
 
 ## Accounts & access
 
@@ -142,15 +149,18 @@ GitHub login). Tina is fully removed.
   each with a free GitHub account. OAuth scope is `public_repo` (repo is public).
 - Edits commit straight to `main` → Vercel auto-redeploys.
 
+Done 2026-06-27 (continued): GitHub OAuth App created (Client ID `Ov23li9uvKNrWK2Y4SVj`),
+creds set in Vercel env; **tuucan.org cut over to Vercel + live with SSL**.
+
 Next (hand-off steps for Jesse):
-1. **Create the GitHub OAuth App** + set the two env vars in Vercel (in progress).
-2. **Add editors as repo collaborators** (Settings → Collaborators on the GitHub repo).
-   Caren = caren.spencersmith@gmail.com (needs a GitHub account).
-3. Repoint **tuucan.org** DNS from Squarespace to Vercel (add domain in Vercel →
-   A `@`→76.76.21.21, CNAME `www`→cname.vercel-dns.com at Squarespace); verify end-to-end.
-   Consider waiting until copy is signed off, since this makes the site public.
-4. Let the Squarespace trial lapse (do NOT pay). Keep the domain registration.
+1. **Test the Sveltia editor login** at tuucan.org/admin (or tuucan-site.vercel.app/admin).
+2. **Add editors as repo collaborators** (GitHub repo → Settings → Collaborators), each
+   with a free GitHub account. Caren = caren.spencersmith@gmail.com.
+3. (Optional) Add **www.tuucan.org** → redirect to apex (Vercel + a www CNAME at
+   Squarespace). Bare domain works now; www does not.
+4. Let the Squarespace trial *site* lapse (do NOT pay). Keep the domain registration.
 5. Replace draft copy with content confirmed by Jesse / the steering committee (edit via
-   /admin or content/home.json); add real photos.
+   /admin or content/home.json); add real photos. Note: draft copy is now PUBLIC at
+   tuucan.org.
 6. Optional cleanup: delete the now-unused TinaCloud project + the
    NEXT_PUBLIC_TINA_*/TINA_TOKEN Vercel env vars.

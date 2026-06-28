@@ -107,3 +107,19 @@ collections:
             fields:
               - { label: Tagline, name: tagline, widget: string }
               - { label: Contact email, name: contactEmail, widget: string }
+      - name: photos
+        label: Event Photos
+        description: Add or edit the photos and captions on the Event Photos page, then Publish.
+        file: content/photos.json
+        format: json
+        fields:
+          - { label: Page heading, name: heading, widget: string }
+          - { label: Intro text (optional), name: intro, widget: text, required: false }
+          - label: Photos
+            name: photos
+            label_singular: Photo
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: Photo, name: image, widget: image }
+              - { label: Caption, name: caption, widget: text }

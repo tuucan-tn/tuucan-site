@@ -5,16 +5,17 @@ type Props = {
 };
 
 const NAV = [
-  { label: "Who We Are", href: "#who-we-are" },
-  { label: "What We Do", href: "#what-we-do" },
-  { label: "Get Involved", href: "#get-involved" },
+  { label: "Who We Are", href: "/#who-we-are" },
+  { label: "What We Do", href: "/#what-we-do" },
+  { label: "Event Photos", href: "/photos" },
+  { label: "Get Involved", href: "/#get-involved" },
 ];
 
 export function SiteHeader({ site }: Props) {
   return (
     <header className="sticky top-0 z-50 border-b border-sand-deep/70 bg-cream/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-        <a href="#top" className="flex items-center gap-3" aria-label={`${site.name} home`}>
+        <a href="/" className="flex items-center gap-3" aria-label={`${site.name} home`}>
           <Image
             src="/tuucan-bird.png"
             alt=""

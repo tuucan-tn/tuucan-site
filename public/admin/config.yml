@@ -59,7 +59,7 @@ collections:
               - { label: Event title, name: title, widget: string }
               - { label: Date (e.g. September 18–20, 2026), name: date, widget: string }
               - { label: Location, name: location, widget: string }
-              - { label: Description, name: body, widget: text }
+              - { label: Description, name: body, widget: list, field: { label: Paragraph, name: paragraph, widget: text } }
               - { label: Button label, name: ctaLabel, widget: string }
               - { label: Registration link (full URL), name: ctaUrl, widget: string }
           - label: Shared values

@@ -76,8 +76,8 @@ export default function Home() {
               <p className="mt-3 text-base font-semibold text-orange-dark">
                 {event.date} · {event.location}
               </p>
-              <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-ink/80">
-                {event.body}
+              <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-ink/80 whitespace-pre-line">
+                {event.body.join("\n\n")}
               </p>
               <div className="mt-7">
                 <a

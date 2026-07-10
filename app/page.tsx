@@ -32,6 +32,9 @@ export default function Home() {
               >
                 Learn more
               </a>
+              <a href="https://www.sidewithlove.org/democracy"
+                className="rounded-full px-5 py-3 text-base font-semibold text-slate underline-offset-4 hover:underline"
+                >UU the Vote</a>
             </div>
           </div>
 

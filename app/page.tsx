@@ -52,15 +52,22 @@ export default function Home() {
       {/* ---------------- Solidarity Summit Banner Image ---------------- */}
       <section className="bg-sand py-8 md:py-10">
         <figure className="mx-auto w-full max-w-6xl px-5">
-          <Image
-            src="/uploads/tn_solidarity_summit_horizontal.jpeg"
-            alt="Please Attend the Tennessee Solidarity Summit at Neshoba Church - Our Voices Are Needed!"
-            width={1920}
-            height={1080}
-            sizes="(max-width: 1280px) 100vw, 1152px"
-            className="h-auto w-full rounded-2xl shadow-md"
-            priority
-          />
+          <a
+            href="https://bit.ly/TN_SolidaritySummit_MoreInformation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <Image
+              src="/uploads/tn_solidarity_summit_horizontal.jpeg"
+              alt="Please Attend the Tennessee Solidarity Summit at Neshoba Church - Our Voices Are Needed!"
+              width={1920}
+              height={1080}
+              sizes="(max-width: 1280px) 100vw, 1152px"
+              className="h-auto w-full rounded-2xl shadow-md transition-opacity hover:opacity-90"
+              priority
+            />
+          </a>
           <figcaption className="mt-3 text-center text-sm font-medium text-slate/70">
             Please Attend the Tennessee Solidarity Summit at Neshoba Church — Our Voices Are Needed!
           </figcaption>

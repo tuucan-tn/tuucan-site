@@ -32,7 +32,7 @@ export default function Home() {
               >
                 Learn more
               </a>
-          
+
             </div>
           </div>
 
@@ -44,6 +44,22 @@ export default function Home() {
               height={1000}
               priority
               className="h-auto w-full mix-blend-multiply"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- Solidarity Summit Banner Image ---------------- */}
+      <section className="bg-sand">
+        <div className="mx-auto max-w-6xl px-5 py-8 md:py-10">
+          <div className="relative w-full overflow-hidden rounded-2xl shadow-md">
+            <Image
+              src="/uploads/tn_solidarity_summit_horizontal.jpeg"
+              alt="Tennessee Solidarity Summit"
+              width={1600}
+              height={600}
+              className="h-auto w-full object-cover"
+              priority
             />
           </div>
         </div>

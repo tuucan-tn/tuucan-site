@@ -7,6 +7,7 @@ type Props = {
 const NAV = [
   { label: "Who We Are", href: "/#who-we-are" },
   { label: "What We Do", href: "/#what-we-do" },
+  { label: "TN Solidarity Summit 2026", href: "/summit" },
   { label: "Event Photos", href: "/photos" },
   { label: "Get Involved", href: "/#get-involved" },
 ];

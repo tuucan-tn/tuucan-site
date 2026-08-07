@@ -50,19 +50,22 @@ export default function Home() {
       </section>
 
       {/* ---------------- Solidarity Summit Banner Image ---------------- */}
-      <section className="bg-sand">
-        <div className="mx-auto max-w-6xl px-5 py-8 md:py-10">
-          <div className="relative w-full overflow-hidden rounded-2xl shadow-md">
+      <section className="w-full bg-sand">
+        <figure className="w-full">
+          <div className="relative w-full" style={{ aspectRatio: "8/3" }}>
             <Image
               src="/uploads/tn_solidarity_summit_horizontal.jpeg"
-              alt="Tennessee Solidarity Summit"
-              width={1600}
-              height={600}
-              className="h-auto w-full object-cover"
+              alt="Please Attend the Tennessee Solidarity Summit at Neshoba Church - Our Voices Are Needed!"
+              fill
+              sizes="100vw"
+              className="object-cover"
               priority
             />
           </div>
-        </div>
+          <figcaption className="bg-slate-deep px-5 py-3 text-center text-sm font-medium text-cream/90">
+            Please Attend the Tennessee Solidarity Summit at Neshoba Church — Our Voices Are Needed!
+          </figcaption>
+        </figure>
       </section>
 
       {/* ---------------- Values strip ---------------- */}

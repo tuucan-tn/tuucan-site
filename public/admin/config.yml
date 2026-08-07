@@ -123,3 +123,25 @@ collections:
             fields:
               - { label: Photo, name: image, widget: image }
               - { label: Caption, name: caption, widget: text }
+
+  - name: summit
+    label: TN Solidarity Summit 2026
+    description: Add or edit the FAQ entries for the TN Solidarity Summit 2026 page, then Publish.
+    files:
+      - name: summit
+        label: Summit Page
+        file: content/summit.json
+        format: json
+        fields:
+          - { label: Page heading, name: heading, widget: string }
+          - { label: Intro text, name: intro, widget: text }
+          - { label: Register button URL, name: registerUrl, widget: string }
+          - { label: Register button label, name: registerLabel, widget: string }
+          - label: Frequently Asked Questions
+            name: faq
+            label_singular: Question
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text }

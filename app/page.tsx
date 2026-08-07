@@ -50,19 +50,18 @@ export default function Home() {
       </section>
 
       {/* ---------------- Solidarity Summit Banner Image ---------------- */}
-      <section className="w-full bg-sand">
-        <figure className="w-full">
-          <div className="relative w-full" style={{ aspectRatio: "8/3" }}>
-            <Image
-              src="/uploads/tn_solidarity_summit_horizontal.jpeg"
-              alt="Please Attend the Tennessee Solidarity Summit at Neshoba Church - Our Voices Are Needed!"
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
-          </div>
-          <figcaption className="bg-slate-deep px-5 py-3 text-center text-sm font-medium text-cream/90">
+      <section className="bg-sand py-8 md:py-10">
+        <figure className="mx-auto w-full max-w-6xl px-5">
+          <Image
+            src="/uploads/tn_solidarity_summit_horizontal.jpeg"
+            alt="Please Attend the Tennessee Solidarity Summit at Neshoba Church - Our Voices Are Needed!"
+            width={1920}
+            height={1080}
+            sizes="(max-width: 1280px) 100vw, 1152px"
+            className="h-auto w-full rounded-2xl shadow-md"
+            priority
+          />
+          <figcaption className="mt-3 text-center text-sm font-medium text-slate/70">
             Please Attend the Tennessee Solidarity Summit at Neshoba Church — Our Voices Are Needed!
           </figcaption>
         </figure>

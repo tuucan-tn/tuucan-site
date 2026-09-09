@@ -6,9 +6,9 @@
   },
   "announcement": {
     "show": true,
-    "text": "TUUCAN is sponsoring the Tennessee Solidarity Summit — Sept 18–20, Memphis",
+    "text": "See a list of nearby hotels for the Tennessee Solidarity Summit — Sept 18–20, Memphis",
     "linkLabel": "See details",
-    "linkHref": "/#event"
+    "linkHref": "https://bit.ly/TN_SolidaritySummit_MoreInformation"
   },
   "hero": {
     "eyebrow": "Tennessee Unitarian Universalist Community Action Network",

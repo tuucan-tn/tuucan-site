@@ -1,8 +1,8 @@
 {
   "heading": "TN Solidarity Summit 2026",
   "intro": "Everything you need to know about the Tennessee Solidarity Summit — September 18–20, 2026, at Neshoba Unitarian Universalist Church in Cordova (Memphis), Tennessee.",
-  "registerUrl": "https://bit.ly/TN_SolidaritySummit_MoreInformation",
-  "registerLabel": "Request More Information",
+  "registerUrl": "https://maps.app.goo.gl/YKEsxxtWV7k37sxp8",
+  "registerLabel": "Neshoba Unitarian Universalist Church",
   "faq": [
     {
       "question": "Who can I contact to find out more about TUUCAN and the TN Solidarity Summit?",
@@ -11,123 +11,10 @@
     {
       "question": "Where is Neshoba Church?",
       "answer": "Neshoba Unitarian Universalist Church is in Cordova, TN, west of downtown Memphis and Interstate 240, near Shelby Farms Park (7350 Raleigh Lagrange Rd, Cordova, TN 38018)."
+    },
+    {
+      "question": "When will registration close?",
+      "answer": "Monday, August 31st."
     }
-  ],
-  "hotels": {
-    "heading": "Nearby Hotels",
-    "intro": "Hotels are organized by their proximity to Neshoba Church. All prices are approximate starting rates.",
-    "clusters": [
-      {
-        "id": "germantown-wolf-river",
-        "name": "Near Germantown Road and Wolf River Blvd",
-        "description": "This upscale, commercial hub sits directly south of the church. These options provide quick access to medical centers, shopping districts, and dining.",
-        "hotels": [
-          {
-            "name": "Homewood Suites by Hilton Memphis-Germantown",
-            "price": "$131",
-            "rating": "4.2 stars (686 reviews)",
-            "category": "3-star hotel",
-            "address": "7855 Wolf River Blvd, Germantown, TN 38138",
-            "description": "An extended-stay 3-star property featuring full in-room kitchens, free hot breakfast, and an outdoor pool.",
-            "directionsUrl": "https://www.google.com/maps/dir//7855+Wolf+River+Blvd,+Germantown,+TN+38138",
-            "websiteUrl": "https://www.hilton.com/en/hotels/memgthw-homewood-suites-memphis-germantown/?SEO_id=GMB-AMER-HG-MEMGTHW"
-          },
-          {
-            "name": "Courtyard by Marriott Memphis Germantown",
-            "price": "$123",
-            "rating": "3.8 stars (573 reviews)",
-            "category": "3-star hotel",
-            "address": "7750 Wolf River Blvd, Germantown, TN 38138",
-            "description": "A modern 3-star hotel with newly renovated rooms, an indoor pool, and an on-site American restaurant.",
-            "directionsUrl": "https://www.google.com/maps/dir//7750+Wolf+River+Blvd,+Germantown,+TN+38138",
-            "websiteUrl": "https://www.marriott.com/en-us/hotels/memgt-courtyard-memphis-germantown/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0"
-          },
-          {
-            "name": "Holiday Inn Express & Suites Memphis/Germantown",
-            "price": "$114",
-            "rating": "4.2 stars (524 reviews)",
-            "category": "2-star hotel",
-            "address": "7784 Wolf Trail Cove, Germantown, TN 38138",
-            "description": "A highly-rated 2-star hotel praised for its safety, cleanliness, free hot breakfast, and indoor heated pool.",
-            "directionsUrl": "https://www.google.com/maps/dir//7784+Wolf+Trail+Cove,+Germantown,+TN+38138",
-            "websiteUrl": "https://www.ihg.com/holidayinnexpress/hotels/us/en/germantown/memgt/hoteldetail?cm_mmc=GoogleMaps-_-EX-_-US-_-MEMGT"
-          },
-          {
-            "name": "Quality Inn & Suites Germantown North",
-            "price": "$71",
-            "rating": "3.1 stars (585 reviews)",
-            "category": "3-star hotel",
-            "address": "7787 Wolf River Blvd, Germantown, TN 38138",
-            "description": "A budget-friendly 3-star alternative that offers free breakfast, free parking, and a heated indoor pool.",
-            "directionsUrl": "https://www.google.com/maps/dir//7787+Wolf+River+Blvd,+Germantown,+TN+38138",
-            "websiteUrl": "https://www.choicehotels.com/tennessee/germantown/quality-inn-hotels/tn398?mc=llgoxxpx"
-          }
-        ]
-      },
-      {
-        "id": "i40-sycamore-view",
-        "name": "Near I-40 and Sycamore View Rd",
-        "description": "This junction sits northwest of the church and provides immediate interstate accessibility. These properties are highly functional for commuters and road trippers.",
-        "hotels": [
-          {
-            "name": "Wingate by Wyndham Memphis East",
-            "price": "$55",
-            "rating": "4.0 stars (1,600 reviews)",
-            "category": "3-star hotel",
-            "address": "6069 Macon Cove, Memphis, TN 38134",
-            "description": "A well-regarded 3-star hotel with a fitness center, free continental breakfast, and highly rated staff.",
-            "directionsUrl": "https://www.google.com/maps/dir//6069+Macon+Cove,+Memphis,+TN+38134",
-            "websiteUrl": "https://www.wyndhamhotels.com/wingate/memphis-tennessee/wingate-by-wyndham-east/overview?CID=LC:7hcm1fujuihd89e:52575&iata=00093796"
-          },
-          {
-            "name": "AmericInn by Wyndham Memphis East",
-            "price": "$47",
-            "rating": "2.9 stars (326 reviews)",
-            "category": "3-star hotel",
-            "address": "1556 Sycamore View Rd, Memphis, TN 38134",
-            "description": "A straightforward 3-star hotel off I-40 that includes an indoor pool, a hot tub, and free high-speed Wi-Fi.",
-            "directionsUrl": "https://www.google.com/maps/dir//1556+Sycamore+View+Rd,+Memphis,+TN+38134",
-            "websiteUrl": "https://www.wyndhamhotels.com/americinn/memphis-tennessee/americinn-memphis-east/overview?CID=LC:div7epuxsaire17:55749&iata=00093796"
-          },
-          {
-            "name": "Comfort Inn & Suites Memphis East",
-            "price": "$65",
-            "rating": "3.2 stars (346 reviews)",
-            "category": "4-star hotel",
-            "address": "6010 Macon Cove, Memphis, TN 38134",
-            "description": "Positioned right off the expressway near several walkable dining options, offering an indoor pool and free breakfast.",
-            "directionsUrl": "https://www.google.com/maps/dir//6010+Macon+Cove,+Memphis,+TN+38134",
-            "websiteUrl": "https://www.choicehotels.com/tennessee/memphis/comfort-inn-hotels/tn899?mc=llgoxxpx"
-          }
-        ]
-      },
-      {
-        "id": "poplar-germantown",
-        "name": "Near Poplar Ave & Germantown Rd",
-        "description": "Slightly further south along Germantown Road toward Poplar Avenue — still roughly a 10-minute drive — you will find another dense pocket of premium lodging options.",
-        "hotels": [
-          {
-            "name": "TownePlace Suites by Marriott Memphis Germantown",
-            "price": "$211",
-            "rating": "4.0 stars (111 reviews)",
-            "category": "3-star hotel",
-            "address": "7800 Neshoba Rd, Germantown, TN 38138",
-            "description": "An excellent all-suite, pet-friendly option equipped with fully functional kitchen units.",
-            "directionsUrl": "https://www.google.com/maps/dir//7800+Neshoba+Rd,+Germantown,+TN+38138",
-            "websiteUrl": "https://www.marriott.com/en-us/hotels/memtg-towneplace-suites-memphis-germantown/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0"
-          },
-          {
-            "name": "Hampton Inn & Suites Memphis Germantown",
-            "price": "$154",
-            "rating": "4.4 stars (814 reviews)",
-            "category": "3-star hotel",
-            "address": "1680 S Germantown Rd, Germantown, TN 38138",
-            "description": "A highly rated 3-star location offering free breakfast, a seasonal outdoor pool, and a gym.",
-            "directionsUrl": "https://www.google.com/maps/dir//1680+S+Germantown+Rd,+Germantown,+TN+38138",
-            "websiteUrl": "https://www.hilton.com/en/hotels/memgehx-hampton-suites-memphis-germantown/?SEO_id=GMB-AMER-HX-MEMGEHX"
-          }
-        ]
-      }
-    ]
-  }
+  ]
 }

@@ -75,7 +75,59 @@
       "restaurantNote": "",
       "mealType": "Breakfast",
       "day": "Saturday, September 19th & Sunday, September 20th",
-      "items": []
+      "items": [
+        {
+          "category": "Dairy",
+          "name": "Yogurt"
+        },
+        {
+          "category": "",
+          "name": "Yogurt (vegan)"
+        },
+        {
+          "category": "Fruit",
+          "name": "Berries"
+        },
+        {
+          "category": "",
+          "name": "Bananas"
+        },
+        {
+          "category": "",
+          "name": "Cherries"
+        },
+        {
+          "category": "",
+          "name": "Clementines"
+        },
+        {
+          "category": "Grains & Snacks",
+          "name": "Granola"
+        },
+        {
+          "category": "",
+          "name": "Protein Bars",
+          "allergyNote": "Gluten-free / Vegan"
+        },
+        {
+          "category": "",
+          "name": "Ciabatta Rolls",
+          "allergyNote": "Vegan"
+        },
+        {
+          "category": "",
+          "name": "English Muffins",
+          "allergyNote": "Gluten-free"
+        },
+        {
+          "category": "Spreads",
+          "name": "Organic Peanut Butter"
+        },
+        {
+          "category": "",
+          "name": "Jams"
+        }
+      ]
     },
     {
       "id": "saturday-lunch",

@@ -1,6 +1,31 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import menus from "@/content/menus.json";
+
+interface MenuItem {
+  category: string;
+  name: string;
+  description?: string;
+  allergyNote?: string;
+}
+
+interface Meal {
+  id: string;
+  title: string;
+  restaurant: string;
+  restaurantNote: string;
+  mealType: string;
+  day: string;
+  items: MenuItem[];
+}
+
+interface MenusData {
+  heading: string;
+  intro: string;
+  meals: Meal[];
+}
+
+import menusRaw from "@/content/menus.json";
+const menus = menusRaw as unknown as MenusData;
 
 export const metadata: Metadata = {
   title: "Summit Meal Menus — TUUCAN",
@@ -72,18 +97,18 @@ export default function MenusPage() {
                         key={i}
                         className="rounded-xl border border-sand-deep bg-sand/40 p-4"
                       >
-                        {"category" in item && item.category ? (
+                        {item.category ? (
                           <p className="mb-2 text-xs font-bold uppercase tracking-widest text-flame">
                             {item.category}
                           </p>
                         ) : null}
                         <p className="font-semibold text-slate">{item.name}</p>
-                        {"description" in item && item.description ? (
+                        {item.description ? (
                           <p className="mt-1 text-sm leading-6 text-ink/70">
                             {item.description}
                           </p>
                         ) : null}
-                        {"allergyNote" in item && item.allergyNote ? (
+                        {item.allergyNote ? (
                           <p className="mt-2 rounded-md bg-orange/10 px-3 py-1.5 text-xs font-medium text-orange-dark">
                             ⚠ {item.allergyNote}
                           </p>

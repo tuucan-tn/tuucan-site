@@ -9,7 +9,64 @@
       "restaurantNote": "Eastern Mediterranean flavors are highlighted on the Lebanese menu at this lively restaurant.",
       "mealType": "Dinner",
       "day": "Friday, September 18th",
-      "items": []
+      "items": [
+        {
+          "category": "Main Order",
+          "name": "Chicken Shawarma"
+        },
+        {
+          "category": "",
+          "name": "Chicken Kebabs"
+        },
+        {
+          "category": "",
+          "name": "Beef Shawarma"
+        },
+        {
+          "category": "",
+          "name": "Beef Kebabs"
+        },
+        {
+          "category": "Vegetarian / Vegan Order",
+          "name": "Baba Ghanooj"
+        },
+        {
+          "category": "",
+          "name": "Falafel"
+        },
+        {
+          "category": "",
+          "name": "Cauliflower"
+        },
+        {
+          "category": "",
+          "name": "Eggplant"
+        },
+        {
+          "category": "",
+          "name": "Salad"
+        },
+        {
+          "category": "Sides (included with both orders)",
+          "name": "Rice"
+        },
+        {
+          "category": "",
+          "name": "Pita Bread"
+        },
+        {
+          "category": "",
+          "name": "Hummus"
+        },
+        {
+          "category": "",
+          "name": "Tabbouleh"
+        },
+        {
+          "category": "",
+          "name": "Garlic Potatoes"
+        }
+      ]
     },
     {
       "id": "continental-breakfast",

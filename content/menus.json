@@ -1,0 +1,42 @@
+{
+  "heading": "Summit Meal Menus",
+  "intro": "All meals are served buffet style. Please review any allergy and sensitivity notes listed with each item.",
+  "meals": [
+    {
+      "id": "friday-dinner",
+      "title": "Friday Night Dinner",
+      "restaurant": "Cedars Restaurant",
+      "restaurantNote": "Eastern Mediterranean flavors are highlighted on the Lebanese menu at this lively restaurant.",
+      "mealType": "Dinner",
+      "day": "Friday, September 18th",
+      "items": []
+    },
+    {
+      "id": "continental-breakfast",
+      "title": "Continental Breakfast",
+      "restaurant": "",
+      "restaurantNote": "",
+      "mealType": "Breakfast",
+      "day": "Saturday, September 19th & Sunday, September 20th",
+      "items": []
+    },
+    {
+      "id": "saturday-lunch",
+      "title": "Saturday Lunch",
+      "restaurant": "Da Sammich Spot Restaurant",
+      "restaurantNote": "Known for gourmet sandwiches and its role as a community-driven resource hub.",
+      "mealType": "Lunch",
+      "day": "Saturday, September 19th",
+      "items": []
+    },
+    {
+      "id": "sunday-lunch",
+      "title": "Sunday Lunch",
+      "restaurant": "Central BBQ",
+      "restaurantNote": "Recognized for its classic Memphis-style slow-smoked meats and expanded menu for vegetarians and vegans.",
+      "mealType": "Lunch",
+      "day": "Sunday, September 20th",
+      "items": []
+    }
+  ]
+}

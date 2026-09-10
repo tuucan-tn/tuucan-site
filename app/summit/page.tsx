@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import summit from "@/content/summit.json";
 import home from "@/content/home.json";
 
@@ -25,7 +26,7 @@ export default function SummitPage() {
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-ink/80">
             {intro}
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
               href={registerUrl}
               target="_blank"
@@ -34,6 +35,12 @@ export default function SummitPage() {
             >
               {registerLabel}
             </a>
+            <Link
+              href="/menus"
+              className="inline-block rounded-full border-2 border-orange px-8 py-3.5 text-base font-semibold text-orange shadow-sm transition-colors hover:bg-orange/10"
+            >
+              View Meal Menus
+            </Link>
           </div>
         </div>
       </section>
